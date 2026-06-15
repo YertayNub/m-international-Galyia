@@ -4,92 +4,235 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты представительства M International в Актобе</title>
-<meta name="description" content="Свяжитесь с топ-координатором M International в Актобе. Номер телефона, WhatsApp, ссылка на Telegram-канал с отзывами и заказ продукции с доставкой.">
+    <meta name="description" content="Свяжитесь с топ-координатором M International в Актобе. Номер телефона, WhatsApp, ссылка на Telegram-канал с отзывами и заказ продукции с доставкой.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --nv-dark: #1A2A50;
-            --nv-mid: #22336A;
-            --pr-dark: #5B2D8E;
-            --gold: #C9A84A;
-            --gold-light: #F4E8C1;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border-glass: rgba(255, 255, 255, 0.08);
+            --nav-bg:      rgba(180, 210, 232, 0.88);
+            --card-border: rgba(100, 160, 200, 0.30);
+            --glass:       rgba(255, 255, 255, 0.40);
+            --gold:        #8B6010;
+            --gold-mid:    #A8782A;
+            --gold-light:  #C9A84A;
+            --text-main:   #1C2A3A;
+            --text-mid:    #2E4A60;
+            --text-muted:  #4A6880;
+            --text-light:  #6A8CA0;
         }
-        
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: radial-gradient(circle at 50% 0%, #22336A 0%, #1A2A50 50%, #0F1A34 100%); color: #E2E8F0; font-family: 'Jost', sans-serif; min-height: 100vh; }
-        
-        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; color: #FFF; }
 
-        nav { background: rgba(26, 42, 80, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-glass); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        nav .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #FFF; text-decoration: none; font-weight: bold; letter-spacing: 2px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { overflow-x: hidden; }
+        body {
+            background: linear-gradient(160deg, #E8F2FA 0%, #D0E4F2 35%, #C2D6E8 65%, #B8CCDE 100%);
+            color: var(--text-main);
+            font-family: 'Jost', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; color: var(--text-main); }
+
+        nav {
+            background: var(--nav-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--card-border);
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(100,160,200,0.18);
+        }
+        nav .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--text-main); text-decoration: none; font-weight: bold; letter-spacing: 2px; }
         nav .logo span { color: var(--gold); }
         nav ul { display: flex; list-style: none; }
         nav ul li { margin-left: 25px; }
-        nav ul li a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 15px; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
-        nav ul li a:hover, nav ul li a.active { color: var(--gold); border-bottom: 1px solid var(--gold); padding-bottom: 4px; }
+        nav ul li a { color: var(--text-mid); text-decoration: none; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; font-weight: 600; }
+        nav ul li a:hover, nav ul li a.active { color: var(--gold); border-bottom: 2px solid var(--gold); padding-bottom: 3px; }
 
         .header-banner { padding: 80px 5% 40px; text-align: center; }
-        .header-banner h1 { font-size: 44px; text-transform: uppercase; background: linear-gradient(135deg, #FFF 30%, var(--gold-light) 70%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .header-banner p { font-size: 16px; color: #A0AEC0; font-weight: 300; max-width: 600px; margin: 10px auto 0; }
+        .header-banner h1 {
+            font-size: 44px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-mid) 50%, var(--gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .header-banner p { font-size: 16px; color: var(--text-muted); font-weight: 300; max-width: 600px; margin: 10px auto 0; }
 
         .container { padding: 20px 5% 60px; max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; }
-        
-        .contact-info { flex: 1.2; min-width: 320px; }
+
+        /* Левая колонка */
+        .contact-info { flex: 1.2; min-width: 300px; }
         .contact-info h2 { font-size: 32px; color: var(--gold); margin-bottom: 20px; }
-        .contact-info p { color: #CBD5E0; line-height: 1.8; margin-bottom: 25px; font-weight: 300; font-size: 16px; }
-        
-        /* Блок адреса */
-        .address-box { background: var(--glass); border: 1px solid var(--border-glass); padding: 25px; border-radius: 15px; margin-bottom: 30px; border-left: 4px solid var(--gold); }
-        .address-box p { margin-bottom: 15px; font-size: 16px; }
+        .contact-info > p { color: var(--text-muted); line-height: 1.8; margin-bottom: 25px; font-weight: 300; font-size: 16px; }
+
+        .address-box {
+            background: var(--glass);
+            border: 1px solid var(--card-border);
+            border-left: 4px solid var(--gold-mid);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 12px rgba(100,160,200,0.10);
+        }
+        .address-box p { margin-bottom: 14px; font-size: 15px; color: var(--text-mid); line-height: 1.6; }
         .address-box p:last-child { margin-bottom: 0; }
-        .address-box strong { color: var(--gold-light); }
-        
-        /* Роскошные кнопки связи */
-        .social-buttons-container { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
-        .social-btn { display: flex; align-items: center; justify-content: center; width: 100%; max-width: 380px; padding: 16px 25px; border-radius: 30px; color: white; text-decoration: none; font-weight: 600; transition: 0.3s ease; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; border: none; cursor: pointer; }
-        .social-btn.whatsapp { background: linear-gradient(135deg, #25D366 0%, #1CBD56 100%); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2); }
-        .social-btn.whatsapp:hover { transform: translateX(5px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); }
-        .social-btn.telegram-direct { background: linear-gradient(135deg, #24A1DE 0%, #1D83B3 100%); box-shadow: 0 4px 15px rgba(36, 161, 222, 0.2); }
-        .social-btn.telegram-direct:hover { transform: translateX(5px); box-shadow: 0 6px 20px rgba(36, 161, 222, 0.4); }
-        .social-btn.telegram-channel { background: linear-gradient(135deg, #C9A84A 0%, #AA8932 100%); color: #1A2A50; box-shadow: 0 4px 15px rgba(201, 168, 74, 0.2); }
-        .social-btn.telegram-channel:hover { transform: translateX(5px); box-shadow: 0 6px 20px rgba(201, 168, 74, 0.4); }
-        
-        /* Правая колонка медиа и формы */
-        .contact-media-form { flex: 1; min-width: 320px; display: flex; flex-direction: column; gap: 30px; }
+        .address-box strong { color: var(--gold); font-weight: 600; }
 
-        /* Блок видео и карты */
-        .media-box { background: var(--glass); border: 1px solid var(--border-glass); padding: 20px; border-radius: 20px; }
-        .media-box h4 { font-size: 20px; color: var(--gold-light); margin-bottom: 12px; letter-spacing: 1px; }
+        /* Кнопки */
+        .social-buttons-container { display: flex; flex-direction: column; gap: 14px; margin-bottom: 30px; }
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 380px;
+            padding: 15px 25px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s ease;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+        }
+        .social-btn.whatsapp { background: linear-gradient(135deg, #25D366 0%, #1CBD56 100%); box-shadow: 0 4px 15px rgba(37,211,102,0.2); }
+        .social-btn.whatsapp:hover { transform: translateX(5px); box-shadow: 0 6px 20px rgba(37,211,102,0.4); }
+        .social-btn.telegram-direct { background: linear-gradient(135deg, #24A1DE 0%, #1D83B3 100%); box-shadow: 0 4px 15px rgba(36,161,222,0.2); }
+        .social-btn.telegram-direct:hover { transform: translateX(5px); box-shadow: 0 6px 20px rgba(36,161,222,0.4); }
+        .social-btn.telegram-channel { background: linear-gradient(135deg, var(--gold-mid) 0%, var(--gold) 100%); color: #FFF8EC; box-shadow: 0 4px 15px rgba(139,96,16,0.2); }
+        .social-btn.telegram-channel:hover { transform: translateX(5px); box-shadow: 0 6px 20px rgba(139,96,16,0.35); }
 
-        /* Закрытая люкс-форма */
-        .contact-form-box { background: var(--glass); border: 1px solid var(--border-glass); padding: 40px; border-radius: 20px; backdrop-filter: blur(15px); box-shadow: 0 10px 30px rgba(15, 26, 52, 0.3); }
-        .contact-form-box h3 { font-size: 26px; color: #FFF; margin-bottom: 10px; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; color: var(--gold-light); font-weight: 400; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
-        
-        .form-group input, .form-group textarea { width: 100%; padding: 14px; background: rgba(15, 26, 52, 0.5); border: 1px solid var(--border-glass); border-radius: 8px; font-size: 15px; color: #FFF; font-family: 'Jost', sans-serif; outline: none; transition: 0.3s; }
-        .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); box-shadow: 0 0 8px rgba(201, 168, 74, 0.2); }
-        
-        .btn-submit { width: 100%; background: linear-gradient(135deg, #C9A84A 0%, #AA8932 100%); color: #1A2A50; padding: 16px; border: none; border-radius: 30px; font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: 0.3s; }
-        .btn-submit:hover { background: linear-gradient(135deg, #D4B55B 0%, #C9A84A 100%); box-shadow: 0 4px 15px rgba(201, 168, 74, 0.3); }
+        /* Правая колонка */
+        .contact-media-form { flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 28px; }
 
-        footer { background: #0F1A34; border-top: 1px solid var(--border-glass); color: #718096; text-align: center; padding: 25px; font-size: 13px; width: 100%; margin-top: 60px; }
+        .media-box {
+            background: var(--glass);
+            border: 1px solid var(--card-border);
+            padding: 22px;
+            border-radius: 18px;
+            box-shadow: 0 2px 12px rgba(100,160,200,0.10);
+        }
+        .media-box h4 { font-size: 19px; color: var(--gold); margin-bottom: 12px; letter-spacing: 0.5px; }
+        .media-box p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; font-weight: 300; line-height: 1.5; }
+
+        .map-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: 14px;
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
+        .map-btn:last-child { margin-bottom: 0; }
+        .map-btn.gis { background: linear-gradient(135deg, #6AB015 0%, #538C0E 100%); box-shadow: 0 3px 12px rgba(106,176,21,0.2); }
+        .map-btn.gis:hover { box-shadow: 0 5px 18px rgba(106,176,21,0.35); transform: translateY(-1px); }
+        .map-btn.gmaps { background: linear-gradient(135deg, #4285F4 0%, #357AE8 100%); box-shadow: 0 3px 12px rgba(66,133,244,0.2); }
+        .map-btn.gmaps:hover { box-shadow: 0 5px 18px rgba(66,133,244,0.35); transform: translateY(-1px); }
+
+        /* Форма */
+        .contact-form-box {
+            background: var(--glass);
+            border: 1px solid var(--card-border);
+            padding: 36px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 8px 28px rgba(100,160,200,0.14);
+        }
+        .contact-form-box h3 { font-size: 26px; color: var(--text-main); margin-bottom: 8px; }
+        .contact-form-box > p { font-size: 14px; color: var(--text-muted); margin-bottom: 22px; font-weight: 300; }
+
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; margin-bottom: 7px; color: var(--gold); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 15px;
+            background: rgba(255,255,255,0.60);
+            border: 1.5px solid var(--card-border);
+            border-radius: 10px;
+            font-size: 15px;
+            color: var(--text-main);
+            font-family: 'Jost', sans-serif;
+            outline: none;
+            transition: 0.3s;
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder { color: var(--text-light); }
+        .form-group input:focus,
+        .form-group textarea:focus { border-color: var(--gold-mid); box-shadow: 0 0 8px rgba(139,96,16,0.15); background: rgba(255,255,255,0.80); }
+
+        .btn-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--gold-mid) 0%, var(--gold) 100%);
+            color: #FFF8EC;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 18px rgba(139,96,16,0.25);
+        }
+        .btn-submit:hover { box-shadow: 0 7px 24px rgba(139,96,16,0.38); transform: translateY(-1px); }
+
+        footer {
+            background: linear-gradient(135deg, #A8C4D8 0%, #90B0C8 100%);
+            border-top: 1px solid var(--card-border);
+            color: var(--text-mid);
+            text-align: center;
+            padding: 28px 5%;
+            font-size: 13px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            html, body { overflow-x: hidden; }
+            nav { flex-direction: column; gap: 10px; padding: 14px 4%; }
+            nav .logo { font-size: 22px; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 4px 0; }
+            nav ul li { margin: 0 8px; }
+            nav ul li a { font-size: 11px; letter-spacing: 1px; }
+            .header-banner { padding: 50px 4% 28px; }
+            .header-banner h1 { font-size: 28px; }
+            .container { flex-direction: column; gap: 24px; padding: 16px 4% 40px; }
+            .contact-info, .contact-media-form { min-width: unset; width: 100%; }
+            .social-btn { max-width: 100%; }
+            .contact-form-box { padding: 22px; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html" class="logo">M <span>INTERNATIONAL</span></a>
+        <a href="./index.html" class="logo">M <span>INTERNATIONAL</span></a>
         <ul>
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="products.html">Продукция</a></li>
-            <li><a href="marketing.html">Маркетинг</a></li>
-            <li><a href="about.html">О нас</a></li>
-            <li><a href="contacts.html" class="active">Контакты</a></li>
+            <li><a href="./index.html">Главная</a></li>
+            <li><a href="./products.html">Продукция</a></li>
+            <li><a href="./marketing.html">Маркетинг</a></li>
+            <li><a href="./about.html">О нас</a></li>
+            <li><a href="./contacts.html" class="active">Контакты</a></li>
         </ul>
     </nav>
 
@@ -99,27 +242,25 @@
     </div>
 
     <div class="container">
-        
+
         <div class="contact-info">
             <h2>Прямой Канал Связи</h2>
             <p>Вы можете мгновенно связаться с топ-координатором команды через защищенные мессенджеры. Мы предоставим исчерпывающие данные о логистике по Казахстану и СНГ, поможем рассчитать маржинальность стартовых пакетов или проведем закрытую верифицированную регистрацию на официальной платформе холдинга.</p>
-            
+
             <div class="address-box">
                 <p><strong>📍 Адрес офиса:</strong><br>Казахстан, г. Актобе, ул. М. Маметовой 4</p>
                 <p><strong>🧭 Ориентир:</strong><br>Вход со стороны церкви, на лифте кнопка "MZ", далее по коридору офис №32</p>
                 <p><strong>⏰ График работы:</strong><br>Понедельник — Суббота: 10:00 – 19:00</p>
                 <p><strong>📞 Телефон:</strong><br>+7 (702) 292 4606</p>
             </div>
-            
+
             <div class="social-buttons-container">
                 <a href="https://wa.me/77022924606?text=Здравствуйте!%20Я%20с%20командного%20сайта." class="social-btn whatsapp" target="_blank">
                     💬 Связаться в WhatsApp
                 </a>
-                
                 <a href="https://t.me/+77022924606" class="social-btn telegram-direct" target="_blank">
                     💬 Написать мне в Telegram (Лично)
                 </a>
-                
                 <a href="https://t.me/kozai6" class="social-btn telegram-channel" target="_blank">
                     📢 Наш Telegram-канал холдинга
                 </a>
@@ -127,29 +268,21 @@
         </div>
 
         <div class="contact-media-form">
-            
-    <div class="media-box">
-    <h4>📍 Проложить маршрут до офиса</h4>
-    <p style="font-size: 14px; color: #A0AEC0; margin-bottom: 20px; font-weight: 300; line-height: 1.5;">
-        Выберите удобное для вас приложение, чтобы мгновенно открыть карту города Актобе и построить точный автомобильный или пешеходный маршрут до ТРЦ «MEGA» (ул. М. Маметовой 4).
-    </p>
-    
-    <a href="https://go.2gis.com/Z8TfM" target="_blank" class="social-btn" style="background: linear-gradient(135deg, #6AB015 0%, #538C0E 100%); box-shadow: 0 4px 15px rgba(106, 176, 21, 0.2); max-width: 100%; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; padding: 12px; border-radius: 8px; font-weight: 500;">
-        🗺️ Открыть маршрут в 2ГИС
-    </a>
 
-    <a href="https://maps.google.com/?q=ул.+М.+Маметовой+4,+Актобе" target="_blank" class="social-btn" style="background: linear-gradient(135deg, #4285F4 0%, #357AE8 100%); box-shadow: 0 4px 15px rgba(66, 133, 244, 0.2); max-width: 100%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; padding: 12px; border-radius: 8px; font-weight: 500;">
-        🚗 Открыть в Google Картах
-    </a>
-</div>
+            <div class="media-box">
+                <h4>📍 Проложить маршрут до офиса</h4>
+                <p>Выберите удобное для вас приложение, чтобы построить точный маршрут до ТРЦ «MEGA» (ул. М. Маметовой 4).</p>
+                <a href="https://go.2gis.com/Z8TfM" target="_blank" class="map-btn gis">🗺️ Открыть маршрут в 2ГИС</a>
+                <a href="https://maps.google.com/?q=ул.+М.+Маметовой+4,+Актобе" target="_blank" class="map-btn gmaps">🚗 Открыть в Google Картах</a>
+            </div>
 
             <div class="media-box">
                 <h4>📺 Видео-гид: Как пройти в офис</h4>
-                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid var(--border-glass);">
-                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
-                            src="https://www.youtube.com/embed/a1FHrImuOts" 
-                            title="Как добраться до офиса M International Актобе" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;border:1px solid var(--card-border);">
+                    <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                            src="https://www.youtube.com/embed/a1FHrImuOts"
+                            title="Как добраться до офиса M International Актобе"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
                     </iframe>
                 </div>
@@ -157,8 +290,7 @@
 
             <div class="contact-form-box">
                 <h3>Экспресс-Заявка</h3>
-                <p style="font-size:14px; color:#A0AEC0; margin-bottom:20px; font-weight:300;">Оставьте ваши персональные данные для обратного звонка.</p>
-                
+                <p>Оставьте ваши персональные данные для обратного звонка.</p>
                 <form onsubmit="alert('Благодарим за доверие! Ваша заявка успешно верифицирована. Мы свяжемся с вами в ближайшее время.'); return false;">
                     <div class="form-group">
                         <label for="name">Ваше имя:</label>
@@ -175,16 +307,13 @@
                     <button type="submit" class="btn-submit">Отправить запрос</button>
                 </form>
             </div>
-            
-        </div>
 
+        </div>
     </div>
 
     <footer>
-       <p style="font-size: 13px; color: #718096; margin-top: 10px;">
-    © 2026 M International Казахстан. Официальное представительство в г. Актобе. <br>
-    Работаем удаленно и доставляем продукцию по всему миру.
-</p>
+        <p>© 2026 M International Казахстан. Официальное представительство в г. Актобе.<br>
+        Работаем удаленно и доставляем продукцию по всему миру.</p>
     </footer>
 
 </body>
